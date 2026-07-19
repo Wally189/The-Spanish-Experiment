@@ -1,0 +1,12 @@
+{
+  "totalLessons": 81,
+  "sessionMinutes": "30–45",
+  "blocks": [
+    {"from":1,"to":12,"title":"First words and direct questions","colour":"#aa151b","method":"Poco a Poco begins with concrete nouns, pictures, short questions and model answers. Meaning is built through Spanish itself rather than long grammatical explanation.","outcomes":["recognise common nouns and articles","answer simple direct questions","notice singular and plural forms","read short model exchanges aloud"]},
+    {"from":13,"to":26,"title":"Description and agreement","colour":"#f1bf00","method":"The course expands descriptions and repeatedly places related words together so gender, number and adjective agreement become visible through use.","outcomes":["describe familiar people, animals and objects","recognise adjective agreement","form fuller questions and answers","copy and recall connected sentences"]},
+    {"from":27,"to":40,"title":"Actions and everyday narration","colour":"#aa151b","method":"More verbs and connected scenes allow the learner to move beyond naming and description into actions, sequence and simple narration.","outcomes":["understand common present-tense verbs","say who is doing what","follow short connected passages","retell familiar material in simple Spanish"]},
+    {"from":41,"to":54,"title":"Longer reading and response","colour":"#f1bf00","method":"Readings become longer and questions demand more than one-word replies. Earlier forms continue to return so recognition becomes increasingly automatic.","outcomes":["read longer graded passages","give connected answers","recognise recurring verb patterns","summarise familiar content aloud"]},
+    {"from":55,"to":68,"title":"Greater range and independence","colour":"#aa151b","method":"Vocabulary and structures widen while the direct-method rhythm remains the same: observe, answer, repeat, read and reuse.","outcomes":["sustain short unscripted exchanges","use a wider descriptive vocabulary","understand familiar material at greater speed","write short connected responses"]},
+    {"from":69,"to":81,"title":"Consolidation and onward use","colour":"#f1bf00","method":"The final block consolidates the book’s graded progression and prepares the learner to carry the method into modern listening, conversation and further reading.","outcomes":["work independently through graded Spanish","hold a conversation on familiar subjects","identify areas needing modern supplementation","continue towards a balanced A2 and conversational B1 pathway"]}
+  ]
+}
