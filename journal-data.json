@@ -1,0 +1,18 @@
+{
+  "entries": [
+    {
+      "lesson": 1,
+      "roman": "I",
+      "slug": "lesson-one",
+      "title": "Lección Primera",
+      "date": "",
+      "status": "In progress",
+      "publicationStatus": "published",
+      "journal": [
+        "The first lesson begins with familiar animals, objects and direct questions. The aim is to understand the Spanish from the picture and the exchange before reaching for an English explanation.",
+        "This entry remains preliminary until the full reading, handwriting, speaking and recording cycle has been completed."
+      ],
+      "todaySpanish": "¿Qué animal es éste? Éste es un gato."
+    }
+  ]
+}
