@@ -6,13 +6,12 @@
       "slug": "lesson-1",
       "title": "Lección Primera",
       "date": "",
-      "status": "In progress",
-      "publicationStatus": "published",
+      "publicationStatus": "coming-soon",
+      "status": "Awaiting completion",
+      "todaySpanish": "This entry will be written after Lección I has been genuinely completed.",
       "journal": [
-        "The first lesson begins with animals, size and direct questions. The aim is to let the repeated Spanish and the original illustrations establish meaning before reaching for an English explanation.",
-        "This entry remains preliminary until the complete first-reading, handwriting, spoken-answer, conversation and second-reading cycle has been completed."
-      ],
-      "todaySpanish": "El elefante es un animal. ¿Qué es el elefante? Es un animal."
+        "The structure is ready, but the journal will not be presented as a completed entry until Alan has actually completed the full lesson cycle."
+      ]
     }
   ]
 }
