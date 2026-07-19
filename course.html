@@ -1,1 +1,24 @@
-<!doctype html><html lang="en-GB"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>The Spanish Experiment — Course</title><style>:root{--ink:#140b08;--red:#aa151b;--gold:#f1bf00;--paper:#fffdf6;--ground:#ead8bd;--muted:#70665f}*{box-sizing:border-box}body{margin:0;padding:2vw;background:var(--ground);font:15px Arial,sans-serif;color:var(--ink)}.shell{min-height:96vh;border:10px solid var(--ink);border-radius:26px;background:var(--paper);overflow:hidden}.top{padding:22px 32px;background:var(--ink);color:#fff;display:flex;justify-content:space-between;align-items:center}.top a{color:var(--gold);text-decoration:none;font-weight:bold}.main{padding:42px;max-width:1100px;margin:auto}.eyebrow{color:var(--red);font-weight:900;letter-spacing:.12em;text-transform:uppercase}.hero{padding:36px;border-radius:20px;background:linear-gradient(120deg,#fff7d8,#fff);border:2px solid #e6c85d}.hero h1{font:52px Georgia,serif;margin:8px 0}.hero p{max-width:800px;color:var(--muted);line-height:1.65}.lesson{display:grid;grid-template-columns:90px 1fr auto;gap:20px;align-items:center;margin-top:24px;padding:24px;border:1px solid #e2d5c4;border-left:9px solid var(--red);border-radius:18px;background:#fff}.number{width:68px;height:68px;border-radius:50%;background:var(--gold);display:grid;place-items:center;font:bold 28px Georgia,serif}.lesson h2{font:30px Georgia,serif;margin:0 0 6px}.lesson p{color:var(--muted);margin:0;line-height:1.5}.btn{display:inline-block;border-radius:30px;padding:13px 18px;background:var(--red);color:#fff;text-decoration:none;font-weight:bold}.coming{opacity:.58;border-left-color:#8e8177}@media(max-width:700px){body{padding:0}.shell{border-radius:0;border-width:6px}.main{padding:22px}.lesson{grid-template-columns:70px 1fr}.lesson .btn{grid-column:1/-1;text-align:center}.hero h1{font-size:40px}}</style></head><body><div class="shell"><header class="top"><strong>The Spanish Experiment</strong><a href="index.html">← Home</a></header><main class="main"><section class="hero"><span class="eyebrow">Poco a Poco</span><h1>The course</h1><p>Follow Hall Avilés’ original progression lesson by lesson. Each published lesson adds a practical experiment: first reading, handwriting, spoken answers, recording, conversation and reflection.</p></section><article class="lesson"><div class="number">1</div><div><h2>Lección Primera</h2><p>Animals, size, singular and plural, direct questions and the first model forms from <em>Poco a Poco</em>.</p></div><a class="btn" href="lesson-one.html">Open lesson →</a></article><article class="lesson coming"><div class="number">2</div><div><h2>Lección Segunda</h2><p>To be transcribed and published as the experiment progresses.</p></div><span>Coming next</span></article></main></div></body></html>
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Spanish Experiment — Course</title>
+<style>html,body{margin:0;min-height:100%;background:#efe3d6}body{font-family:system-ui,sans-serif}.loading{min-height:100vh;display:grid;place-items:center;padding:30px;color:#1d0806;text-align:center}</style>
+</head>
+<body>
+<div class="loading">Opening your next lesson…</div>
+<script>
+const legacyLesson=/^#lesson-(\d+)$/.exec(location.hash);if(legacyLesson){const url=new URL(location.href);url.searchParams.set('lesson',legacyLesson[1]);url.hash='';history.replaceState({},'',url.pathname+url.search)}
+fetch('/the-catholic-experiment/course-source.html',{cache:'no-store'})
+  .then(response=>{if(!response.ok)throw new Error('Course source could not be loaded.');return response.text()})
+  .then(source=>{
+    if(!source.includes('</body>'))throw new Error('Course source is incomplete.');
+    const scripts='<script src="/the-catholic-experiment/reader-progress.js"><\/script><script src="/the-catholic-experiment/course-enhancements.js"><\/script><script src="/the-catholic-experiment/lesson-template.js"><\/script><script src="/the-catholic-experiment/lesson-media.js"><\/script><script src="/the-catholic-experiment/course-progress.js"><\/script><script src="/the-catholic-experiment/church-connection.js"><\/script><script src="spanish-course-adapter.js"><\/script>';
+    const output=source.replace('</body>',scripts+'</body>');
+    document.open();document.write(output);document.close();
+  })
+  .catch(error=>{document.body.innerHTML='<main class="loading"><p><strong>The course could not be opened.</strong><br>'+error.message+'</p></main>'});
+</script>
+</body>
+</html>
