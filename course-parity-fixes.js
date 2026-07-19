@@ -1,56 +1,61 @@
 (()=>{
   const toast=document.getElementById('lockToast');
   const lessonNumber=()=>Number(new URLSearchParams(location.search).get('lesson'))||1;
-  function showLock(){
+  const showLock=()=>{
     if(!toast)return;
     toast.classList.add('show');
     clearTimeout(window.spanishLockTimer);
     window.spanishLockTimer=setTimeout(()=>toast.classList.remove('show'),2200);
-  }
+  };
+  const scrollToElement=selector=>document.querySelector(selector)?.scrollIntoView({behavior:'smooth',block:'start'});
+
   document.addEventListener('click',event=>{
-    const lesson=event.target.closest('.lesson-link.coming');
-    if(!lesson)return;
-    event.preventDefault();
-    event.stopImmediatePropagation();
-    showLock();
+    const locked=event.target.closest('.lesson-link.coming');
+    if(locked){
+      event.preventDefault();
+      event.stopImmediatePropagation();
+      showLock();
+      return;
+    }
+    if(event.target.closest('#completeButton'))setTimeout(enhanceLesson,0);
   },true);
-  function scrollToElement(selector){document.querySelector(selector)?.scrollIntoView({behavior:'smooth',block:'start'})}
-  function useArabicLessonNumbers(){
+
+  function applyArabicNumbers(){
     document.querySelectorAll('.lesson-link').forEach(link=>{
       const n=Number(link.dataset.number);
       if(!n)return;
       const icon=link.querySelector('.icon');
       const heading=link.querySelector('strong');
-      if(icon)icon.textContent=String(n);
-      if(heading)heading.textContent='Lección '+n;
+      if(icon&&icon.textContent!==String(n))icon.textContent=String(n);
+      if(heading&&heading.textContent!=='Lección '+n)heading.textContent='Lección '+n;
     });
     const n=lessonNumber();
-    const replacements=[
-      ['.breadcrumbs','Lección '+n],
-      ['.hero h1','Lección '+n],
-      ['.content-card h3','What Lección '+n+' reveals']
-    ];
-    replacements.forEach(([selector,text])=>{const el=document.querySelector(selector);if(el&&selector!=='.breadcrumbs')el.textContent=text});
+    const hero=document.querySelector('.hero h1');
+    if(hero)hero.textContent='Lección '+n;
+    const reflection=document.querySelector('.content-card h3');
+    if(reflection&&reflection.textContent.startsWith('What Lección'))reflection.textContent='What Lección '+n+' reveals';
     const crumbs=document.querySelector('.breadcrumbs');
-    if(crumbs){const spans=crumbs.childNodes;for(const node of spans){if(node.nodeType===Node.TEXT_NODE&&/Lección\s+[IVXLCDM]+/.test(node.textContent))node.textContent=node.textContent.replace(/Lección\s+[IVXLCDM]+/,'Lección '+n)}}
+    if(crumbs)crumbs.innerHTML=crumbs.innerHTML.replace(/Lección\s+[IVXLCDM]+/g,'Lección '+n);
     const complete=document.getElementById('completeButton');
     if(complete)complete.textContent=complete.classList.contains('done')?'Lección '+n+' completed ✓':'Mark Lección '+n+' complete';
     document.title='The Spanish Experiment — Lección '+n;
   }
+
   function enhanceLesson(){
+    applyArabicNumbers();
     const page=document.getElementById('lessonPage');
-    if(!page||!page.querySelector('.lesson-grid')){useArabicLessonNumbers();return}
-    useArabicLessonNumbers();
-    if(page.dataset.parityEnhanced==='yes')return;
+    if(!page||!page.querySelector('.lesson-grid'))return false;
+    if(page.dataset.parityEnhanced==='yes')return true;
     page.dataset.parityEnhanced='yes';
     const n=lessonNumber();
     const checklistKey='spanish-experiment-checklist-'+n;
     let checked=[];
-    try{checked=JSON.parse(localStorage.getItem(checklistKey)||'[]')}catch(e){}
+    try{checked=JSON.parse(localStorage.getItem(checklistKey)||'[]')}catch(e){checked=[]}
     page.querySelectorAll('.reader-check input').forEach((box,index)=>{
       box.checked=checked.includes(index);
       box.addEventListener('change',()=>{
-        const state=[...page.querySelectorAll('.reader-check input')].map((item,i)=>item.checked?i:null).filter(i=>i!==null);
+        const state=[...page.querySelectorAll('.reader-check input')]
+          .map((item,i)=>item.checked?i:null).filter(i=>i!==null);
         localStorage.setItem(checklistKey,JSON.stringify(state));
       });
     });
@@ -73,11 +78,16 @@
       panel.scrollIntoView({behavior:'smooth',block:'center'});
       panel.querySelector('textarea')?.focus();
     };
+    return true;
   }
-  new MutationObserver(()=>enhanceLesson()).observe(document.getElementById('lessonPage'),{childList:true,subtree:true});
-  new MutationObserver(()=>useArabicLessonNumbers()).observe(document.getElementById('desktopLessons'),{childList:true,subtree:true});
-  new MutationObserver(()=>useArabicLessonNumbers()).observe(document.getElementById('mobileList'),{childList:true,subtree:true});
-  enhanceLesson();
+
+  let attempts=0;
+  const initialise=setInterval(()=>{
+    attempts++;
+    const ready=enhanceLesson();
+    if(ready||attempts>=40)clearInterval(initialise);
+  },75);
+
   const requested=lessonNumber();
   if(requested>1){
     setTimeout(()=>{
@@ -89,6 +99,6 @@
         document.querySelector('.lesson-link[data-number="1"]')?.click();
         showLock();
       }
-    },150);
+    },350);
   }
 })();
