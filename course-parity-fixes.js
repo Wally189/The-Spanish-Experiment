@@ -15,10 +15,33 @@
     showLock();
   },true);
   function scrollToElement(selector){document.querySelector(selector)?.scrollIntoView({behavior:'smooth',block:'start'})}
+  function useArabicLessonNumbers(){
+    document.querySelectorAll('.lesson-link').forEach(link=>{
+      const n=Number(link.dataset.number);
+      if(!n)return;
+      const icon=link.querySelector('.icon');
+      const heading=link.querySelector('strong');
+      if(icon)icon.textContent=String(n);
+      if(heading)heading.textContent='Lección '+n;
+    });
+    const n=lessonNumber();
+    const replacements=[
+      ['.breadcrumbs','Lección '+n],
+      ['.hero h1','Lección '+n],
+      ['.content-card h3','What Lección '+n+' reveals']
+    ];
+    replacements.forEach(([selector,text])=>{const el=document.querySelector(selector);if(el&&selector!=='.breadcrumbs')el.textContent=text});
+    const crumbs=document.querySelector('.breadcrumbs');
+    if(crumbs){const spans=crumbs.childNodes;for(const node of spans){if(node.nodeType===Node.TEXT_NODE&&/Lección\s+[IVXLCDM]+/.test(node.textContent))node.textContent=node.textContent.replace(/Lección\s+[IVXLCDM]+/,'Lección '+n)}}
+    const complete=document.getElementById('completeButton');
+    if(complete)complete.textContent=complete.classList.contains('done')?'Lección '+n+' completed ✓':'Mark Lección '+n+' complete';
+    document.title='The Spanish Experiment — Lección '+n;
+  }
   function enhanceLesson(){
     const page=document.getElementById('lessonPage');
-    if(!page||page.dataset.parityEnhanced==='yes')return;
-    if(!page.querySelector('.lesson-grid'))return;
+    if(!page||!page.querySelector('.lesson-grid')){useArabicLessonNumbers();return}
+    useArabicLessonNumbers();
+    if(page.dataset.parityEnhanced==='yes')return;
     page.dataset.parityEnhanced='yes';
     const n=lessonNumber();
     const checklistKey='spanish-experiment-checklist-'+n;
@@ -52,6 +75,8 @@
     };
   }
   new MutationObserver(()=>enhanceLesson()).observe(document.getElementById('lessonPage'),{childList:true,subtree:true});
+  new MutationObserver(()=>useArabicLessonNumbers()).observe(document.getElementById('desktopLessons'),{childList:true,subtree:true});
+  new MutationObserver(()=>useArabicLessonNumbers()).observe(document.getElementById('mobileList'),{childList:true,subtree:true});
   enhanceLesson();
   const requested=lessonNumber();
   if(requested>1){
