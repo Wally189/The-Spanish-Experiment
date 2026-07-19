@@ -1,0 +1,71 @@
+{
+  "lessons": [
+    {
+      "number": 1,
+      "roman": "I",
+      "publicationStatus": "published",
+      "title": "Lección Primera",
+      "status": "Published lesson",
+      "lede": "The experiment begins here: Guillermo F. Hall Avilés’ course, a notebook, a microphone and a determination to discover whether Spanish can become something genuinely usable.",
+      "estimatedTime": "30–45 minutes plus handwriting and speech",
+      "aim": "Meet the first Spanish patterns through animals, size and direct questions",
+      "dayNote": "Day 1. Excited. A little daunted. Why on earth did I challenge myself with this? Here goes… — A.W.P.G.",
+      "curiosityTitle": "Let’s begin…",
+      "curiosityText": "The first step is to read through Lección Primera in Guillermo F. Hall Avilés’ Poco a Poco.",
+      "curiositySample": "El elefante es un animal. ¿Qué es el elefante? Es un animal.",
+      "readings": [
+        {"label":"1A","title":"Conversación: los animales","beforeAudio":"","afterAudio":""},
+        {"label":"1B","title":"Grande y pequeño","beforeAudio":"","afterAudio":""}
+      ],
+      "studySteps": [
+        {"title":"Write out the vocabulary","text":"Write each word in Spanish and English. Keep the two languages together so the vocabulary can be checked and recalled."},
+        {"title":"Copy the lesson text by hand","text":"Copy the opening conversation from the book to become accustomed to forming and seeing the Spanish words."},
+        {"title":"Think in plain English","text":"Record what the repeated forms and word order appear to be doing before reaching for a technical explanation."},
+        {"title":"Complete Poco a Poco’s exercises","text":"Work from the original book. This site records the experience while following the textbook lesson."}
+      ],
+      "checklist": [
+        "Read Lección Primera in Poco a Poco",
+        "Make a genuine first reading before studying",
+        "Write the vocabulary in Spanish and English",
+        "Copy the lesson text by hand",
+        "Answer the questions aloud",
+        "Record what seemed easy, difficult or surprising",
+        "Return for a second reading after study"
+      ],
+      "todayLatin": "This first published lesson establishes the experiment: read, listen, notice, write, practise and return. The reader can use the same sequence and mark the lesson complete when finished.",
+      "journalSlug": "lesson-1",
+      "notebookImage": "",
+      "notebookAlt": "Alan’s handwritten notes for Lección Primera",
+      "notebookCaption": "The notebook evidence for Lección Primera will be added as the experiment develops.",
+      "churchPlaceholder": "A proportionate cultural or Catholic connection may be added after the lesson has been studied and checked."
+    },
+    {
+      "number": 2,
+      "roman": "II",
+      "publicationStatus": "coming-soon",
+      "title": "Lección Segunda",
+      "status": "Coming soon",
+      "lede": "Lección Segunda will become public after Alan has genuinely completed and documented it.",
+      "estimatedTime": "30–45 minutes plus handwriting and speech",
+      "aim": "Continue Poco a Poco through the same reusable page structure",
+      "dayNote": "Lesson II template prepared. No learning claim is being made yet. — A.W.G.",
+      "curiosityTitle": "The next step in Poco a Poco",
+      "curiosityText": "This is a preparation prompt rather than Alan’s finished explanation.",
+      "curiositySample": "Same template. New lesson. Real evidence replaces every placeholder.",
+      "readings": [{"label":"2A","title":"Lección Segunda first reading","beforeAudio":"","afterAudio":""}],
+      "studySteps": [
+        {"title":"Read the original lesson","text":"Begin with Poco a Poco and make an unpolished first attempt."},
+        {"title":"Write the vocabulary","text":"Copy the new words in Spanish and English, preserving any uncertainty for later checking."},
+        {"title":"Copy and notice","text":"Write the lesson material by hand and note repeated forms without inventing conclusions."},
+        {"title":"Record the real reaction","text":"Replace this preparation text with Alan’s observations, corrections and questions after study."}
+      ],
+      "checklist": ["Read Lección Segunda in Poco a Poco","Make a first reading before studying","Write the new vocabulary","Copy the relevant material by hand","Photograph the notebook page","Send the journal thoughts for publication","Return for a second reading"],
+      "todayLatin": "When Alan completes Lección Segunda, this placeholder will be replaced by his real reflection.",
+      "journalSlug": "lesson-2",
+      "notebookImage": "",
+      "notebookAlt": "Alan’s handwritten notes for Lección Segunda",
+      "notebookCaption": "Alan’s Lección Segunda notebook photograph will appear here after the lesson is completed.",
+      "churchPlaceholder": "A proportionate connection will be added only after the lesson has been studied and checked."
+    }
+  ]
+}
