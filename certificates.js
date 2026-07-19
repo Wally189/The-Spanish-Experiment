@@ -1,1 +1,109 @@
-(()=>{const section=document.querySelector('[data-v="certificates"]');if(!section)return;const milestones=[{code:'Pre-A1',lessons:1,roman:'I',colour:'var(--burgundy)',title:'The first complete experiment',description:'Complete one full cycle: first reading, vocabulary, handwriting, study, second reading and reflection.'},{code:'Early A1',lessons:5,roman:'V',colour:'var(--gold)',title:'Recognition begins to settle',description:'Recognise recurring vocabulary, familiar questions and the first sentence patterns across several lessons.'},{code:'A1',lessons:10,roman:'X',colour:'var(--burgundy)',title:'A working foundation',description:'Follow short direct-method exchanges and answer familiar questions without translating every word first.'},{code:'A1+',lessons:20,roman:'XX',colour:'var(--gold)',title:'Beyond isolated sentences',description:'Read more connected passages and use a growing range of nouns, adjectives and verbs with support.'},{code:'A2 pathway',lessons:30,roman:'XXX',colour:'var(--burgundy)',title:'Connected Spanish',description:'Work through increasingly connected reading, description and narration while building spoken responses.'},{code:'A2 / B1 bridge',lessons:40,roman:'XL',colour:'var(--gold)',title:'Poco a Poco completed',description:'Complete the forty numbered lessons and prepare to bridge the book into modern listening and conversation.'}];let published=new Set();const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));function done(n){return localStorage.getItem('spanish-experiment-complete-'+n)==='yes'}function completedCount(){let n=0;while(n<40&&published.has(n+1)&&done(n+1))n++;return n}function render(){const completed=completedCount(),publishedCount=published.size,current=[...milestones].reverse().find(x=>completed>=x.lessons),next=milestones.find(x=>completed<x.lessons),percentage=Math.min(100,Math.round(completed/40*100)),progressText=publishedCount===0?'Lección I is coming soon. Reader progress begins when the first completed lesson is published.':`${current?`Current indicative stage: <strong>${esc(current.code)}</strong>.`:'Complete Lección I to reach the first indicative stage.'} ${next?`The next milestone is ${esc(next.code)} at Lección ${next.lessons}.`:'The forty numbered lessons are complete.'}`;section.innerHTML=`<h1>Certificates</h1><p class="muted certificate-intro">A visual record of your progress through Hall Avilés’ forty numbered lessons, from the first completed experiment to the end of <em>Poco a Poco</em>.</p><div class="certificate-note"><strong>Indicative comparison, not an accredited qualification.</strong><p>CEFR levels describe listening, speaking, reading and writing together. These labels are only a familiar way to show increasing independence through the course.</p></div><section class="progress-panel"><div><span class="progress-label">Recorded progress on this device</span><h2>${completed} of 40 lessons</h2><p>${progressText}</p></div><div class="progress-ring" style="--progress:${percentage*3.6}deg"><span>${percentage}%</span></div><div class="progress-track"><span style="width:${percentage}%"></span></div></section><div class="certificate-grid">${milestones.map(m=>{const unlocked=completed>=m.lessons,remaining=Math.max(0,m.lessons-completed);return `<article class="certificate-card ${unlocked?'unlocked':'locked'}" style="--certificate:${m.colour}"><div class="certificate-top"><span class="certificate-medal">${m.roman}</span><span class="certificate-status">${unlocked?'Reached':'Locked'}</span></div><span class="certificate-level">${esc(m.code)}</span><h2>${esc(m.title)}</h2><p>${esc(m.description)}</p><div class="certificate-threshold"><strong>Lección ${m.lessons}</strong><span>${unlocked?'Milestone reached':`${remaining} ${remaining===1?'lesson':'lessons'} to go`}</span></div></article>`}).join('')}</div><div class="certificate-footer-note"><strong>What completion means here:</strong> only published lessons contribute. Progress follows the uninterrupted sequence of published lessons marked complete in this browser.</div>`}const style=document.createElement('style');style.textContent='.certificate-intro{max-width:850px;font-size:17px;line-height:1.65}.certificate-note{margin:20px 0;padding:18px 20px;border-left:6px solid var(--gold);border-radius:0 15px 15px 0;background:#fff7dd;color:#5d5038;line-height:1.6}.certificate-note p{margin:6px 0 0}.progress-panel{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:20px;align-items:center;margin:24px 0;padding:24px;border-radius:20px;color:#fff;background:linear-gradient(135deg,var(--ink),#4d1118)}.progress-panel h2{margin:5px 0 7px;font-size:31px}.progress-panel p{margin:0;color:#e4d8d2;line-height:1.55}.progress-label{color:var(--gold);font-size:10px;font-weight:900;letter-spacing:.13em;text-transform:uppercase}.progress-ring{display:grid;place-items:center;width:92px;height:92px;border-radius:50%;background:conic-gradient(var(--gold) var(--progress),rgba(255,255,255,.15) 0);position:relative}.progress-ring:after{content:"";position:absolute;width:70px;height:70px;border-radius:50%;background:#32100f}.progress-ring span{position:relative;z-index:1;font:bold 19px Georgia,serif}.progress-track{grid-column:1/-1;overflow:hidden;height:9px;border-radius:999px;background:rgba(255,255,255,.14)}.progress-track span{display:block;height:100%;background:var(--gold)}.certificate-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px}.certificate-card{display:flex;flex-direction:column;min-height:310px;padding:22px;border:1px solid #e1d7d0;border-top:8px solid var(--certificate);border-radius:19px;background:#fff}.certificate-card.locked{opacity:.58;filter:saturate(.65)}.certificate-top{display:flex;align-items:center;justify-content:space-between}.certificate-medal{display:grid;place-items:center;width:66px;height:66px;border-radius:50%;background:var(--certificate);color:#fff;font:bold 18px Georgia,serif}.certificate-status{padding:7px 10px;border-radius:999px;background:#f1ebe6;font-size:10px;font-weight:900}.certificate-level{margin-top:18px;color:var(--certificate);font-size:11px;font-weight:900;text-transform:uppercase}.certificate-card h2{margin:6px 0 9px;font-size:25px}.certificate-card p{color:var(--muted);line-height:1.6}.certificate-threshold{display:flex;justify-content:space-between;gap:10px;margin-top:auto;padding-top:14px;border-top:1px solid #e8dfda}.certificate-footer-note{margin-top:20px;padding:17px;border-radius:14px;background:#f6f1ed;color:#625750;line-height:1.6}@media(max-width:1000px){.certificate-grid{grid-template-columns:1fr 1fr}}@media(max-width:650px){.progress-panel,.certificate-grid{grid-template-columns:1fr}.progress-ring{justify-self:start}.certificate-card{min-height:0}}';document.head.appendChild(style);render();fetch('lessons-data.json',{cache:'no-store'}).then(r=>r.ok?r.json():{lessons:[]}).then(data=>{published=new Set((data.lessons||[]).filter(l=>l.publicationStatus==='published').map(l=>Number(l.number)));render()}).catch(render);window.addEventListener('storage',render)})();
+(()=>{
+  const esc=value=>String(value??'').replace(/[&<>"']/g,char=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));
+
+  function fixMaterials(){
+    const cards=[...document.querySelectorAll('[data-v="materials"] .book-grid .material-card')];
+    if(cards.length<3)return;
+    const configurations=[
+      {
+        title:'Browse the book',
+        text:'Read the historical edition in the Internet Archive book reader.',
+        href:'https://archive.org/details/pocopocoelementa00hallrich',
+        label:'Browse the archived edition →',
+        colour:'var(--burgundy)'
+      },
+      {
+        title:'Buy a printed copy',
+        text:'Buy a physical facsimile reprint from a UK bookseller.',
+        href:'https://www.thegreatbritishbookshop.co.uk/products/poco-a-poco-an-elementary-direct-method-for-learning-spanish-classic-reprint-1',
+        label:'Buy a printed copy →',
+        colour:'var(--burgundy)'
+      },
+      {
+        title:'Find a library copy',
+        text:'Use Open Library to locate edition and catalogue information.',
+        href:'https://openlibrary.org/search?q=Poco+a+Poco+Hall+Aviles',
+        label:'Check library listings →',
+        colour:'var(--gold)'
+      }
+    ];
+    cards.slice(0,3).forEach((card,index)=>{
+      const item=configurations[index];
+      card.style.setProperty('--c',item.colour);
+      const heading=card.querySelector('h3');
+      const paragraph=card.querySelector('p');
+      const link=card.querySelector('a');
+      if(heading)heading.textContent=item.title;
+      if(paragraph)paragraph.textContent=item.text;
+      if(link){
+        link.href=item.href;
+        link.textContent=item.label;
+        link.target='_blank';
+        link.rel='noopener';
+      }
+    });
+  }
+
+  fixMaterials();
+
+  const section=document.querySelector('[data-v="certificates"]');
+  if(!section)return;
+
+  const milestones=[
+    {code:'Pre-A1',lessons:1,colour:'var(--burgundy)',title:'The first complete experiment',description:'Complete one full cycle: first reading, vocabulary, handwriting, study, second reading and reflection.'},
+    {code:'Early A1',lessons:5,colour:'var(--gold)',title:'Recognition begins to settle',description:'Recognise recurring vocabulary, familiar questions and the first sentence patterns across several lessons.'},
+    {code:'A1',lessons:10,colour:'var(--burgundy)',title:'A working foundation',description:'Follow short direct-method exchanges and answer familiar questions without translating every word first.'},
+    {code:'A1+',lessons:20,colour:'var(--gold)',title:'Beyond isolated sentences',description:'Read more connected passages and use a growing range of nouns, adjectives and verbs with support.'},
+    {code:'A2 pathway',lessons:30,colour:'var(--burgundy)',title:'Connected Spanish',description:'Work through increasingly connected reading, description and narration while building spoken responses.'},
+    {code:'A2 / B1 bridge',lessons:40,colour:'var(--gold)',title:'Poco a Poco completed',description:'Complete the forty numbered lessons and prepare to bridge the book into modern listening and conversation.'}
+  ];
+  let published=new Set();
+  const done=number=>localStorage.getItem('spanish-experiment-complete-'+number)==='yes';
+  function completedCount(){
+    let number=0;
+    while(number<40&&published.has(number+1)&&done(number+1))number++;
+    return number;
+  }
+  function render(){
+    const completed=completedCount();
+    const publishedCount=published.size;
+    const current=[...milestones].reverse().find(item=>completed>=item.lessons);
+    const next=milestones.find(item=>completed<item.lessons);
+    const percentage=Math.min(100,Math.round(completed/40*100));
+    const progressText=publishedCount===0
+      ?'Lección 1 is coming soon. Reader progress begins when the first completed lesson is published.'
+      :`${current?`Current indicative stage: <strong>${esc(current.code)}</strong>.`:'Complete Lección 1 to reach the first indicative stage.'} ${next?`The next milestone is ${esc(next.code)} at Lección ${next.lessons}.`:'The forty numbered lessons are complete.'}`;
+    section.innerHTML=`
+      <h1>Certificates</h1>
+      <p class="muted certificate-intro">A visual record of your progress through Hall Avilés’ forty numbered lessons, from the first completed experiment to the end of <em>Poco a Poco</em>.</p>
+      <div class="certificate-note"><strong>Indicative comparison, not an accredited qualification.</strong><p>CEFR levels describe listening, speaking, reading and writing together. These labels are only a familiar way to show increasing independence through the course.</p></div>
+      <section class="progress-panel">
+        <div><span class="progress-label">Recorded progress on this device</span><h2>${completed} of 40 lessons</h2><p>${progressText}</p></div>
+        <div class="progress-ring" style="--progress:${percentage*3.6}deg"><span>${percentage}%</span></div>
+        <div class="progress-track"><span style="width:${percentage}%"></span></div>
+      </section>
+      <div class="certificate-grid">${milestones.map(item=>{
+        const unlocked=completed>=item.lessons;
+        const remaining=Math.max(0,item.lessons-completed);
+        return `<article class="certificate-card ${unlocked?'unlocked':'locked'}" style="--certificate:${item.colour}">
+          <div class="certificate-top"><span class="certificate-medal">${item.lessons}</span><span class="certificate-status">${unlocked?'Reached':'Locked'}</span></div>
+          <span class="certificate-level">${esc(item.code)}</span><h2>${esc(item.title)}</h2><p>${esc(item.description)}</p>
+          <div class="certificate-threshold"><strong>Lección ${item.lessons}</strong><span>${unlocked?'Milestone reached':`${remaining} ${remaining===1?'lesson':'lessons'} to go`}</span></div>
+        </article>`;
+      }).join('')}</div>
+      <div class="certificate-footer-note"><strong>What completion means here:</strong> only published lessons contribute. Progress follows the uninterrupted sequence of published lessons marked complete in this browser.</div>`;
+  }
+
+  const style=document.createElement('style');
+  style.textContent='.certificate-intro{max-width:850px;font-size:17px;line-height:1.65}.certificate-note{margin:20px 0;padding:18px 20px;border-left:6px solid var(--gold);border-radius:0 15px 15px 0;background:#fff7dd;color:#5d5038;line-height:1.6}.certificate-note p{margin:6px 0 0}.progress-panel{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:20px;align-items:center;margin:24px 0;padding:24px;border-radius:20px;color:#fff;background:linear-gradient(135deg,var(--ink),#4d1118)}.progress-panel h2{margin:5px 0 7px;font-size:31px}.progress-panel p{margin:0;color:#e4d8d2;line-height:1.55}.progress-label{color:var(--gold);font-size:10px;font-weight:900;letter-spacing:.13em;text-transform:uppercase}.progress-ring{display:grid;place-items:center;width:92px;height:92px;border-radius:50%;background:conic-gradient(var(--gold) var(--progress),rgba(255,255,255,.15) 0);position:relative}.progress-ring:after{content:"";position:absolute;width:70px;height:70px;border-radius:50%;background:#32100f}.progress-ring span{position:relative;z-index:1;font:bold 19px Georgia,serif}.progress-track{grid-column:1/-1;overflow:hidden;height:9px;border-radius:999px;background:rgba(255,255,255,.14)}.progress-track span{display:block;height:100%;background:var(--gold)}.certificate-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px}.certificate-card{display:flex;flex-direction:column;min-height:310px;padding:22px;border:1px solid #e1d7d0;border-top:8px solid var(--certificate);border-radius:19px;background:#fff}.certificate-card.locked{opacity:.58;filter:saturate(.65)}.certificate-top{display:flex;align-items:center;justify-content:space-between}.certificate-medal{display:grid;place-items:center;width:66px;height:66px;border-radius:50%;background:var(--certificate);color:#fff;font:bold 18px Georgia,serif}.certificate-status{padding:7px 10px;border-radius:999px;background:#f1ebe6;font-size:10px;font-weight:900}.certificate-level{margin-top:18px;color:var(--certificate);font-size:11px;font-weight:900;text-transform:uppercase}.certificate-card h2{margin:6px 0 9px;font-size:25px}.certificate-card p{color:var(--muted);line-height:1.6}.certificate-threshold{display:flex;justify-content:space-between;gap:10px;margin-top:auto;padding-top:14px;border-top:1px solid #e8dfda}.certificate-footer-note{margin-top:20px;padding:17px;border-radius:14px;background:#f6f1ed;color:#625750;line-height:1.6}@media(max-width:1000px){.certificate-grid{grid-template-columns:1fr 1fr}}@media(max-width:650px){.progress-panel,.certificate-grid{grid-template-columns:1fr}.progress-ring{justify-self:start}.certificate-card{min-height:0}}';
+  document.head.appendChild(style);
+  render();
+  fetch('lessons-data.json',{cache:'no-store'})
+    .then(response=>response.ok?response.json():{lessons:[]})
+    .then(data=>{
+      published=new Set((data.lessons||[]).filter(lesson=>lesson.publicationStatus==='published').map(lesson=>Number(lesson.number)));
+      render();
+    })
+    .catch(render);
+  window.addEventListener('storage',render);
+})();
