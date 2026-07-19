@@ -15,42 +15,20 @@
       event.preventDefault();
       event.stopImmediatePropagation();
       showLock();
-      return;
     }
-    if(event.target.closest('#completeButton'))setTimeout(enhanceLesson,0);
   },true);
 
-  function applyArabicNumbers(){
-    document.querySelectorAll('.lesson-link').forEach(link=>{
-      const n=Number(link.dataset.number);
-      if(!n)return;
-      const icon=link.querySelector('.icon');
-      const heading=link.querySelector('strong');
-      if(icon&&icon.textContent!==String(n))icon.textContent=String(n);
-      if(heading&&heading.textContent!=='Lección '+n)heading.textContent='Lección '+n;
-    });
-    const n=lessonNumber();
-    const hero=document.querySelector('.hero h1');
-    if(hero)hero.textContent='Lección '+n;
-    const reflection=document.querySelector('.content-card h3');
-    if(reflection&&reflection.textContent.startsWith('What Lección'))reflection.textContent='What Lección '+n+' reveals';
-    const crumbs=document.querySelector('.breadcrumbs');
-    if(crumbs)crumbs.innerHTML=crumbs.innerHTML.replace(/Lección\s+[IVXLCDM]+/g,'Lección '+n);
-    const complete=document.getElementById('completeButton');
-    if(complete)complete.textContent=complete.classList.contains('done')?'Lección '+n+' completed ✓':'Mark Lección '+n+' complete';
-    document.title='The Spanish Experiment — Lección '+n;
-  }
-
   function enhanceLesson(){
-    applyArabicNumbers();
     const page=document.getElementById('lessonPage');
-    if(!page||!page.querySelector('.lesson-grid'))return false;
-    if(page.dataset.parityEnhanced==='yes')return true;
-    page.dataset.parityEnhanced='yes';
+    if(!page||!page.querySelector('.lesson-grid'))return;
     const n=lessonNumber();
+    const signature='lesson-'+n;
+    if(page.dataset.parityEnhanced===signature)return;
+    page.dataset.parityEnhanced=signature;
+
     const checklistKey='spanish-experiment-checklist-'+n;
     let checked=[];
-    try{checked=JSON.parse(localStorage.getItem(checklistKey)||'[]')}catch(e){checked=[]}
+    try{checked=JSON.parse(localStorage.getItem(checklistKey)||'[]')}catch{checked=[]}
     page.querySelectorAll('.reader-check input').forEach((box,index)=>{
       box.checked=checked.includes(index);
       box.addEventListener('change',()=>{
@@ -59,6 +37,7 @@
         localStorage.setItem(checklistKey,JSON.stringify(state));
       });
     });
+
     const actions=[...page.querySelectorAll('.quick-action')];
     if(actions[0])actions[0].onclick=()=>scrollToElement('.reading-grid');
     if(actions[1])actions[1].onclick=()=>scrollToElement('.study-sequence');
@@ -78,15 +57,13 @@
       panel.scrollIntoView({behavior:'smooth',block:'center'});
       panel.querySelector('textarea')?.focus();
     };
-    return true;
   }
 
-  let attempts=0;
-  const initialise=setInterval(()=>{
-    attempts++;
-    const ready=enhanceLesson();
-    if(ready||attempts>=40)clearInterval(initialise);
-  },75);
+  const page=document.getElementById('lessonPage');
+  if(page){
+    new MutationObserver(enhanceLesson).observe(page,{childList:true});
+    enhanceLesson();
+  }
 
   const requested=lessonNumber();
   if(requested>1){
