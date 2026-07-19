@@ -1,0 +1,16 @@
+{
+  "terms": [
+    {"id":"noun","term":"Noun","category":"Building blocks","plain":"A naming word: a person, place, animal, object or idea.","example":"gato, mesa, España","aliases":["naming word","sustantivo"]},
+    {"id":"article","term":"Article","category":"Building blocks","plain":"A small word placed before a noun. Spanish articles include el, la, los, las, un and una.","example":"el gato; una casa","aliases":["el","la","un","una"]},
+    {"id":"pronoun","term":"Pronoun","category":"Building blocks","plain":"A word used in place of a noun.","example":"yo, tú, él, ella, éste","aliases":["subject pronoun","pronombre"]},
+    {"id":"question-word","term":"Question word","category":"Connecting ideas","plain":"A word used to ask for information.","example":"qué, quién, dónde, cómo","aliases":["interrogative"]},
+    {"id":"gender","term":"Gender","category":"Nouns and agreement","plain":"Spanish nouns are grammatically masculine or feminine. This affects articles and adjectives.","example":"el libro; la mesa","aliases":["masculine","feminine"]},
+    {"id":"number","term":"Number","category":"Nouns and agreement","plain":"Whether a word is singular or plural.","example":"el gato; los gatos","aliases":["singular","plural"]},
+    {"id":"adjective","term":"Adjective","category":"Nouns and agreement","plain":"A word that describes a noun and normally agrees with it in gender and number.","example":"un gato negro; unas casas blancas","aliases":["describing word","adjetivo"]},
+    {"id":"agreement","term":"Agreement","category":"Nouns and agreement","plain":"The way related words change form to match gender or number.","example":"la gata negra; los gatos negros","aliases":["agree","concord"]},
+    {"id":"verb","term":"Verb","category":"Verbs","plain":"A word expressing an action, occurrence or state.","example":"es, tiene, corre","aliases":["doing word","verbo"]},
+    {"id":"infinitive","term":"Infinitive","category":"Verbs","plain":"The dictionary form of a verb, usually ending in -ar, -er or -ir.","example":"hablar, comer, vivir","aliases":["dictionary form"]},
+    {"id":"present-tense","term":"Present tense","category":"Verbs","plain":"A verb form commonly used for what happens now or regularly.","example":"El perro corre.","aliases":["present"]},
+    {"id":"direct-method","term":"Direct method","category":"Learning method","plain":"Learning through the target language itself, supported by pictures, demonstration, repetition and questions.","example":"¿Qué animal es éste? Éste es un gato.","aliases":["natural method","Poco a Poco"]}
+  ]
+}
