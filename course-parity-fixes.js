@@ -68,6 +68,7 @@
     if(!page?.querySelector('.lesson-grid'))return;
     const n=lessonNumber();
     const signature='lesson-'+n;
+    page.dataset.currentLesson=String(n);
     applyArabicNumbers();
     convertToSingleReading();
     if(page.dataset.parityEnhanced===signature)return;
