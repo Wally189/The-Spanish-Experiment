@@ -21,37 +21,67 @@
       "curiosityText": "Read the opening exchange in Lección Primera once without stopping. The repeated questions, answers and contrasts are designed to carry much of the meaning themselves.",
       "curiositySample": "El elefante es un animal. ¿Qué es el elefante? Es un animal.",
       "readings": [
-        {"label":"1A","title":"Conversación: los animales","beforeAudio":"","afterAudio":""},
-        {"label":"1B","title":"Grande y pequeño","beforeAudio":"","afterAudio":""}
+        {"label":"1A","title":"Lección Primera: animales, tamaño y preguntas","beforeAudio":"","afterAudio":""}
       ],
       "studySteps": [
-        {"title":"Read the original lesson","text":"Begin with Hall Avilés’ text and pictures. Read for sense before analysing individual forms."},
-        {"title":"Write out the vocabulary","text":"Copy the Spanish and English into the vocabulary notebook, including the article with each noun."},
-        {"title":"Copy and answer","text":"Copy the opening questions and answers, then close the book and answer each question aloud."},
-        {"title":"Vary the examples","text":"Substitute elefante, rata, caballo, mula and burro while preserving the sentence pattern."},
-        {"title":"Use it with a speaker","text":"Ask a Spanish speaker to listen for clarity and natural rhythm rather than perfection."}
+        {"title":"Read the original lesson","text":"Begin with Hall Avilés’ text and pictures. Read the complete lesson for sense before analysing individual forms."},
+        {"title":"Write the key vocabulary","text":"Write each key Spanish word with its English equivalent, including the article with each noun."},
+        {"title":"Write out the lesson","text":"Copy the story, conversation and exercises presented in the lesson by hand."},
+        {"title":"Reread it aloud","text":"Read the complete lesson aloud, aiming for clarity and a steady natural rhythm rather than perfection."},
+        {"title":"Mark and investigate difficulties","text":"Underline words you find difficult or do not understand, then look them up in a reliable Spanish dictionary."}
       ],
       "checklist": [
         "Read Lección Primera in Poco a Poco",
-        "Make a genuine first reading before studying",
-        "Write the vocabulary in Spanish and English",
-        "Copy the lesson text by hand",
-        "Answer the questions aloud",
-        "Change the animal and size words",
-        "Return for a second reading after study"
+        "Listen to or make one complete reading",
+        "Write the key Spanish vocabulary and English equivalents",
+        "Write out the story, conversation and exercises",
+        "Reread the complete lesson aloud",
+        "Underline difficult or unclear words",
+        "Look up those words in a dictionary"
       ],
       "todaySpanish": "The opening lesson demonstrates the direct method in miniature: meaning emerges through pictures, repetition, contrast and questions. The learner is already reading Spanish before receiving a formal grammar explanation.",
       "journalSlug": "lesson-1",
       "notebookImage": "",
       "notebookAlt": "Alan’s handwritten notes for Lección Primera",
-      "notebookCaption": "The notebook evidence for Lección Primera will be added after the complete reading, handwriting and speaking cycle."
+      "notebookCaption": "The notebook evidence for Lección Primera will be added after the complete reading, vocabulary, handwriting, speaking and dictionary work."
     },
     {
       "number": 2,
       "roman": "II",
-      "publicationStatus": "coming-soon",
+      "publicationStatus": "published",
       "title": "Lección Segunda",
-      "status": "Awaiting study"
+      "status": "Published lesson",
+      "lede": "The second lesson moves from animals to people and family. Juan, Antonio, María, Anita and Luisa introduce muchacho and muchacha, él and ella, ellos and ellas, and simple questions about brothers and sisters.",
+      "estimatedTime": "30–45 minutes plus handwriting and speech",
+      "aim": "Recognise and use basic words for boys, girls, brothers and sisters, together with él, ella, ellos and ellas",
+      "dayNote": "Lesson 2. Familiar patterns, new people, and the first small step from naming things to describing relationships. — A.W.P.G.",
+      "curiosityTitle": "How quickly do familiar question patterns carry new meaning?",
+      "curiosityText": "Read the conversation once as a whole. Notice how the questions from Lección Primera now help you understand new words about people and family.",
+      "curiositySample": "Juan es un muchacho. ¿Es María un muchacho? ¡Oh, no! Ella es una muchacha.",
+      "readings": [
+        {"label":"2A","title":"Lección Segunda: Juan, María y la familia","beforeAudio":"","afterAudio":""}
+      ],
+      "studySteps": [
+        {"title":"Read the original lesson","text":"Read the complete conversation, practice material, useful phrases, exercise and questionnaire in Hall Avilés’ text."},
+        {"title":"Write the key vocabulary","text":"Write each key Spanish word with its English equivalent, paying particular attention to muchacho, muchacha, hermano, hermana, él, ella, ellos and ellas."},
+        {"title":"Write out the lesson","text":"Copy the story, conversation and exercises presented in Lección Segunda by hand."},
+        {"title":"Reread it aloud","text":"Read the complete lesson aloud, keeping the questions and answers connected as a real exchange."},
+        {"title":"Mark and investigate difficulties","text":"Underline words you find difficult or do not understand, then look them up in a reliable Spanish dictionary."}
+      ],
+      "checklist": [
+        "Read Lección Segunda in Poco a Poco",
+        "Listen to or make one complete reading",
+        "Write the key Spanish vocabulary and English equivalents",
+        "Write out the story, conversation and exercises",
+        "Reread the complete lesson aloud",
+        "Underline difficult or unclear words",
+        "Look up those words in a dictionary"
+      ],
+      "todaySpanish": "Lección Segunda reuses the direct question-and-answer pattern while adding people, family relationships and personal pronouns. The familiar structure reduces the burden of the new vocabulary.",
+      "journalSlug": "lesson-2",
+      "notebookImage": "",
+      "notebookAlt": "Alan’s handwritten notes for Lección Segunda",
+      "notebookCaption": "The notebook evidence for Lección Segunda will be added after the complete reading, vocabulary, handwriting, speaking and dictionary work."
     }
   ]
 }
