@@ -20,30 +20,48 @@
       "curiosityTitle": "How much can you understand before translation?",
       "curiosityText": "Read the opening exchange in Lección Primera once without stopping. The repeated questions, answers and contrasts are designed to carry much of the meaning themselves.",
       "curiositySample": "El elefante es un animal. ¿Qué es el elefante? Es un animal.",
-      "readings": [
-        {"label":"1A","title":"Lección Primera: animales, tamaño y preguntas","beforeAudio":"","afterAudio":""}
-      ],
+      "readings": [{"label": "1A", "title": "Lección Primera: animales, tamaño y preguntas", "audio": ""}],
+      "interpretationNote": "This is my interpretation of the lesson and its method. Corrections and constructive feedback are welcome.",
       "studySteps": [
-        {"title":"Read the original lesson","text":"Begin with Hall Avilés’ text and pictures. Read the complete lesson for sense before analysing individual forms."},
-        {"title":"Write the key vocabulary","text":"Write each key Spanish word with its English equivalent, including the article with each noun."},
-        {"title":"Write out the lesson","text":"Copy the story, conversation and exercises presented in the lesson by hand."},
-        {"title":"Reread it aloud","text":"Read the complete lesson aloud, aiming for clarity and a steady natural rhythm rather than perfection."},
-        {"title":"Mark and investigate difficulties","text":"Underline words you find difficult or do not understand, then look them up in a reliable Spanish dictionary."}
+        {"title": "Read and record the lesson once", "text": "Read the complete lesson in Hall Avilés’ book and make one honest recording of whatever appears in the lesson."},
+        {"title": "Write the key vocabulary", "text": "Write each key Spanish word with its English equivalent, including the article with each noun."},
+        {"title": "Write out the lesson", "text": "Copy the story, conversation and exercises presented in the lesson by hand."},
+        {"title": "Reread it aloud", "text": "Reread the complete lesson aloud, aiming for clarity and a steady natural rhythm rather than perfection."},
+        {"title": "Mark and investigate difficulties", "text": "Underline words you find difficult or do not understand, then look them up in a reliable Spanish dictionary."}
       ],
+      "grammar": {
+        "title": "Agreement, articles, questions and basic word order",
+        "summary": "Lección Primera introduces four central patterns: articles, noun–adjective agreement, subject–verb agreement and the position of no and interrogative words.",
+        "points": [
+          "The article, adjective and participle agree with the noun in gender and number.",
+          "The verb agrees with its subject in person and number.",
+          "The negative adverb no generally comes before the verb.",
+          "Interrogative words carry a written accent in questions."
+        ],
+        "examples": [
+          "el elefante / la rata / los elefantes / las ratas",
+          "un animal grande / una rata pequeña",
+          "¿Qué es el elefante? — Es un animal.",
+          "La rata no es grande."
+        ],
+        "practice": "Find one article, one adjective and one question in the lesson. Then identify which words agree with each other.",
+        "bookPages": "Parte Segunda, Explicaciones Gramaticales, printed pages 239–240",
+        "bookUrl": "https://archive.org/details/pocopocoelementa00hallrich/page/239/mode/2up"
+      },
       "checklist": [
-        "Read Lección Primera in Poco a Poco",
-        "Listen to or make one complete reading",
+        "Read and record Lección Primera once",
         "Write the key Spanish vocabulary and English equivalents",
         "Write out the story, conversation and exercises",
         "Reread the complete lesson aloud",
         "Underline difficult or unclear words",
-        "Look up those words in a dictionary"
+        "Look up those words in a dictionary",
+        "Open and complete the grammar note"
       ],
       "todaySpanish": "The opening lesson demonstrates the direct method in miniature: meaning emerges through pictures, repetition, contrast and questions. The learner is already reading Spanish before receiving a formal grammar explanation.",
       "journalSlug": "lesson-1",
       "notebookImage": "",
       "notebookAlt": "Alan’s handwritten notes for Lección Primera",
-      "notebookCaption": "The notebook evidence for Lección Primera will be added after the complete reading, vocabulary, handwriting, speaking and dictionary work."
+      "notebookCaption": "The notebook evidence for Lección Primera will be added after the reading, vocabulary, handwriting, speaking, dictionary and grammar work."
     },
     {
       "number": 2,
@@ -58,30 +76,48 @@
       "curiosityTitle": "How quickly do familiar question patterns carry new meaning?",
       "curiosityText": "Read the conversation once as a whole. Notice how the questions from Lección Primera now help you understand new words about people and family.",
       "curiositySample": "Juan es un muchacho. ¿Es María un muchacho? ¡Oh, no! Ella es una muchacha.",
-      "readings": [
-        {"label":"2A","title":"Lección Segunda: Juan, María y la familia","beforeAudio":"","afterAudio":""}
-      ],
+      "readings": [{"label": "2A", "title": "Lección Segunda: Juan, María y la familia", "audio": ""}],
+      "interpretationNote": "This is my interpretation of the lesson and its method. Corrections and constructive feedback are welcome.",
       "studySteps": [
-        {"title":"Read the original lesson","text":"Read the complete conversation, practice material, useful phrases, exercise and questionnaire in Hall Avilés’ text."},
-        {"title":"Write the key vocabulary","text":"Write each key Spanish word with its English equivalent, paying particular attention to muchacho, muchacha, hermano, hermana, él, ella, ellos and ellas."},
-        {"title":"Write out the lesson","text":"Copy the story, conversation and exercises presented in Lección Segunda by hand."},
-        {"title":"Reread it aloud","text":"Read the complete lesson aloud, keeping the questions and answers connected as a real exchange."},
-        {"title":"Mark and investigate difficulties","text":"Underline words you find difficult or do not understand, then look them up in a reliable Spanish dictionary."}
+        {"title": "Read and record the lesson once", "text": "Read the complete conversation, practice material, useful phrases, exercise and questionnaire in Hall Avilés’ text, making one honest recording."},
+        {"title": "Write the key vocabulary", "text": "Write each key Spanish word with its English equivalent, paying particular attention to muchacho, muchacha, hermano, hermana, él, ella, ellos and ellas."},
+        {"title": "Write out the lesson", "text": "Copy the story, conversation and exercises presented in Lección Segunda by hand."},
+        {"title": "Reread it aloud", "text": "Reread the complete lesson aloud, keeping the questions and answers connected as a real exchange."},
+        {"title": "Mark and investigate difficulties", "text": "Underline words you find difficult or do not understand, then look them up in a reliable Spanish dictionary."}
       ],
+      "grammar": {
+        "title": "Personal pronouns, plurals and comparisons",
+        "summary": "Lección Segunda adds personal pronouns and shows how Spanish forms plurals and simple comparisons.",
+        "points": [
+          "Él, ella, ellos and ellas are third-person personal pronouns; the accent distinguishes él from the article el.",
+          "Most nouns and adjectives ending in an unstressed vowel form the plural with -s.",
+          "Those ending in a consonant generally form the plural with -es.",
+          "Regular comparisons use más or menos with the adjective."
+        ],
+        "examples": [
+          "él / ella / ellos / ellas",
+          "muchacho → muchachos; muchacha → muchachas",
+          "alto → más alto; bajo → menos bajo",
+          "¿Son muchachos María y Anita? — No, ellas son muchachas."
+        ],
+        "practice": "Change one singular sentence from the lesson into the plural, then make one comparison using más or menos.",
+        "bookPages": "Parte Segunda, Explicaciones Gramaticales, printed pages 240–242",
+        "bookUrl": "https://archive.org/details/pocopocoelementa00hallrich/page/240/mode/2up"
+      },
       "checklist": [
-        "Read Lección Segunda in Poco a Poco",
-        "Listen to or make one complete reading",
+        "Read and record Lección Segunda once",
         "Write the key Spanish vocabulary and English equivalents",
         "Write out the story, conversation and exercises",
         "Reread the complete lesson aloud",
         "Underline difficult or unclear words",
-        "Look up those words in a dictionary"
+        "Look up those words in a dictionary",
+        "Open and complete the grammar note"
       ],
-      "todaySpanish": "Lección Segunda reuses the direct question-and-answer pattern while adding people, family relationships and personal pronouns. The familiar structure reduces the burden of the new vocabulary.",
+      "todaySpanish": "Lección Segunda reuses the direct question-and-answer pattern while adding people, family relationships, personal pronouns, plurals and comparisons. The familiar structure reduces the burden of the new vocabulary.",
       "journalSlug": "lesson-2",
       "notebookImage": "",
       "notebookAlt": "Alan’s handwritten notes for Lección Segunda",
-      "notebookCaption": "The notebook evidence for Lección Segunda will be added after the complete reading, vocabulary, handwriting, speaking and dictionary work."
+      "notebookCaption": "The notebook evidence for Lección Segunda will be added after the reading, vocabulary, handwriting, speaking, dictionary and grammar work."
     }
   ]
 }
