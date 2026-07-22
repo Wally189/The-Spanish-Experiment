@@ -5,12 +5,31 @@
       "roman": "I",
       "slug": "lesson-1",
       "title": "Lección Primera",
-      "date": "",
-      "publicationStatus": "coming-soon",
-      "status": "Awaiting completion",
-      "todaySpanish": "This entry will be written after Lección I has been genuinely completed.",
+      "date": "20 July 2026",
+      "publicationStatus": "published",
+      "status": "Completed",
+      "todaySpanish": "¡Español, me gustas!",
       "journal": [
-        "The structure is ready, but the journal will not be presented as a completed entry until Alan has actually completed the full lesson cycle."
+        "First day. The reading and comprehension were easy, although I suspect that is because I have used some of the language apps out there and already know a little Spanish. I also listened to a couple of YouTube videos, just to get the accent into my ear.",
+        "I am worried that I sound very English, but my Spanish friend assures me that she does not care as long as she understands me.",
+        "The lesson was quick, and I definitely feel that the old-style method of reading, writing in a notebook, hearing myself, underlining and speaking made me learn in a way I have not for a long time. When I do these things digitally, I often feel that I am doing them passively. This time I felt much more involved."
+      ]
+    },
+    {
+      "lesson": 2,
+      "roman": "II",
+      "slug": "lesson-2",
+      "title": "Lección Segunda",
+      "date": "22 July 2026",
+      "publicationStatus": "published",
+      "status": "Completed",
+      "todaySpanish": "Poco a poco — little by little.",
+      "journal": [
+        "I came to Lección II and the reading and comprehension were fine — until I started circling words. It took me a long time to work out the differences between children, girls and boys. That is simply the way my brain works.",
+        "I looked up words using an old-fashioned dictionary rather than an online translator. That gave me time to digest the words and think about them properly.",
+        "The lesson was longer, so I split it over two days: first reading and writing out the conversation, then a quick recap the next day before answering the questions. I was mostly confident, although I was uncertain about one or two answers.",
+        "In the modern world we have AI, so I asked it to read Lección II and compare my answers. I photographed the pages in my notebook and was reassured by the feedback.",
+        "I am definitely beginning to feel more confident. Roll on the next lesson!"
       ]
     }
   ]
